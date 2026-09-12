@@ -1,1 +1,1308 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lee Landscaping | Garden & Landscaping Services</title>
+
+  <meta name="description" content="Lee Landscaping provides professional landscaping, garden maintenance, paving, lawn installation, garden makeovers and outdoor services. Get a quote today.">
+
+  <meta name="theme-color" content="#176b35">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8f5;
+      color: #18251c;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      min-height: 70px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      color: #176b35;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #b47b18;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      font-weight: 700;
+      font-size: 14px;
+      color: #26352a;
+    }
+
+    nav a:hover {
+      color: #176b35;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: #176b35;
+      color: white;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(9, 45, 22, 0.78), rgba(9, 45, 22, 0.78)),
+        linear-gradient(135deg, #176b35, #0b3d20);
+      color: white;
+      padding: 70px 20px;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 15px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #e5b64d;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 19px;
+      color: #e9f2eb;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 9px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-green {
+      background: #ffffff;
+      color: #176b35;
+    }
+
+    .btn-gold {
+      background: #d9a936;
+      color: #18251c;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading small {
+      color: #176b35;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: #637066;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #f7faf7;
+      border: 1px solid #e1e8e2;
+      padding: 28px;
+      border-radius: 16px;
+      transition: 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #e4f1e7;
+      font-size: 28px;
+      margin-bottom: 17px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      color: #176b35;
+    }
+
+    .service-card p {
+      color: #68736b;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-weight: 900;
+      color: #b47b18;
+    }
+
+    /* WHY US */
+    .why {
+      background: #eef5ef;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .why-card strong {
+      display: block;
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .why-card h3 {
+      color: #176b35;
+      margin-bottom: 6px;
+    }
+
+    .why-card p {
+      font-size: 14px;
+      color: #68736b;
+    }
+
+    /* PRICES */
+    .prices {
+      background: #ffffff;
+    }
+
+    .price-list {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 10px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 20px;
+      background: #f7faf7;
+      border: 1px solid #e2e8e3;
+      border-radius: 10px;
+    }
+
+    .price-row span:last-child {
+      font-weight: 900;
+      color: #176b35;
+      white-space: nowrap;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #f6f8f5;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      color: #5f6c62;
+      margin-bottom: 15px;
+    }
+
+    .about-box {
+      background: #176b35;
+      color: white;
+      padding: 35px;
+      border-radius: 20px;
+    }
+
+    .about-box h3 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .about-box ul {
+      list-style: none;
+    }
+
+    .about-box li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* BOOKING */
+    .booking {
+      background: #ffffff;
+    }
+
+    .booking-box {
+      max-width: 850px;
+      margin: auto;
+      background: #f5f8f5;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #dfe7e0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccd7ce;
+      border-radius: 8px;
+      background: white;
+      font: inherit;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #176b35;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 18px;
+      background: #176b35;
+      color: white;
+      font-size: 16px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: #eef5ef;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-card {
+      min-height: 220px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #176b35, #5a9b63);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: white;
+      font-weight: 900;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-card:nth-child(2) {
+      background: linear-gradient(135deg, #567b4b, #a4bd7a);
+    }
+
+    .gallery-card:nth-child(3) {
+      background: linear-gradient(135deg, #7c6334, #c2a76b);
+    }
+
+    .gallery-card:nth-child(4) {
+      background: linear-gradient(135deg, #245b38, #8abf74);
+    }
+
+    .gallery-card:nth-child(5) {
+      background: linear-gradient(135deg, #687d3d, #c1cf79);
+    }
+
+    .gallery-card:nth-child(6) {
+      background: linear-gradient(135deg, #3c6645, #93a97e);
+    }
+
+    .gallery-card::before {
+      content: "🌿";
+      position: absolute;
+      font-size: 100px;
+      right: 20px;
+      top: 25px;
+      opacity: 0.3;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #0d351b;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #e5b64d;
+    }
+
+    .contact-card a {
+      color: white;
+      word-break: break-word;
+    }
+
+    /* PAYMENT */
+    .payment {
+      background: #dfeee2;
+      text-align: center;
+    }
+
+    .payment-box {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .payment h2 {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .payment p {
+      color: #536057;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #071e0e;
+      color: #b9c8bc;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .service-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 55px 15px;
+      }
+
+      .service-grid,
+      .gallery-grid,
+      .why-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .booking-box {
+        padding: 20px;
+      }
+
+      .price-row {
+        font-size: 14px;
+      }
+
+      .about h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BUSINESS SETTINGS -->
+  <script>
+    const BUSINESS_NAME = "Lee Landscaping";
+    const WHATSAPP_LINK = "https://wa.me/message/27688585355";
+    const WHATSAPP_NUMBER = "068 858 5355";
+    const YOCO_LINK = "https://pay.yoco.com/lee-mobile-servises-and-constraction";
+
+    /*
+      Direct WhatsApp number used for pre-filled booking messages.
+      This is based on 068 858 5355.
+    */
+    const WHATSAPP_DIRECT = "https://wa.me/27688585355";
+  </script>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+
+      <a href="#home" class="logo">
+        Lee <span>Landscaping</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <nav id="mainNav">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#prices" onclick="closeMenu()">Prices</a>
+        <a href="#gallery" onclick="closeMenu()">Projects</a>
+        <a href="#booking" onclick="closeMenu()">Get Quote</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-tag">
+        🌿 Professional Landscaping & Garden Services
+      </div>
+
+      <h1>
+        Transform Your
+        <span>Outdoor Space.</span>
+      </h1>
+
+      <p>
+        We create beautiful, clean and functional outdoor spaces through
+        landscaping, garden maintenance, paving, lawns and garden makeovers.
+      </p>
+
+      <div class="buttons">
+        <a href="#booking" class="btn btn-gold">
+          Get a Free Quote
+        </a>
+
+        <a id="heroWhatsApp" href="#" class="btn btn-green">
+          WhatsApp Us
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>What We Do</small>
+        <h2>Our Landscaping Services</h2>
+        <p>
+          From small garden improvements to complete outdoor makeovers,
+          we help turn your space into something you can enjoy.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Garden Makeovers</h3>
+          <p>
+            Refresh and transform tired outdoor spaces with planting,
+            landscaping and garden improvements.
+          </p>
+          <div class="price">Quote Required</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌱</div>
+          <h3>Lawn Installation</h3>
+          <p>
+            Lawn preparation and installation for a fresh and attractive
+            garden.
+          </p>
+          <div class="price">From R1,500</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🧱</div>
+          <h3>Paving & Pathways</h3>
+          <p>
+            Paving, garden pathways and practical outdoor walkways.
+          </p>
+          <div class="price">From R250/m²</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Garden Maintenance</h3>
+          <p>
+            Grass cutting, trimming, pruning, weeding and general garden care.
+          </p>
+          <div class="price">From R250</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌳</div>
+          <h3>Tree & Hedge Trimming</h3>
+          <p>
+            Keep trees, shrubs and hedges neat, healthy and under control.
+          </p>
+          <div class="price">Quote Required</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌺</div>
+          <h3>Planting</h3>
+          <p>
+            Flowers, plants, soil preparation and garden beds designed around
+            your outdoor space.
+          </p>
+          <div class="price">Quote Required</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Irrigation</h3>
+          <p>
+            Help keep your lawn and plants watered with practical irrigation
+            solutions.
+          </p>
+          <div class="price">Quote Required</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🧹</div>
+          <h3>Garden Clean-Up</h3>
+          <p>
+            Remove garden waste, leaves, overgrown vegetation and unwanted
+            garden material.
+          </p>
+          <div class="price">From R300</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌳</div>
+          <h3>Landscaping Projects</h3>
+          <p>
+            Complete landscaping projects tailored to your property and
+            budget.
+          </p>
+          <div class="price">Free Quote</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>Why Choose Us</small>
+        <h2>Simple. Professional. Reliable.</h2>
+        <p>
+          We focus on practical landscaping solutions and quality service.
+        </p>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <strong>🌿</strong>
+          <h3>Garden Focused</h3>
+          <p>Solutions designed around your outdoor space.</p>
+        </div>
+
+        <div class="why-card">
+          <strong>💰</strong>
+          <h3>Fair Quotes</h3>
+          <p>Clear pricing based on the work required.</p>
+        </div>
+
+        <div class="why-card">
+          <strong>📱</strong>
+          <h3>Easy Booking</h3>
+          <p>Request a quote quickly through WhatsApp.</p>
+        </div>
+
+        <div class="why-card">
+          <strong>🏡</strong>
+          <h3>Convenient</h3>
+          <p>Landscaping services brought to your property.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="prices" id="prices">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>Starting Prices</small>
+        <h2>Landscaping Price Guide</h2>
+        <p>
+          Final prices depend on the size, materials and requirements of your
+          project.
+        </p>
+      </div>
+
+      <div class="price-list">
+
+        <div class="price-row">
+          <span>Garden Maintenance</span>
+          <span>From R250</span>
+        </div>
+
+        <div class="price-row">
+          <span>Garden Clean-Up</span>
+          <span>From R300</span>
+        </div>
+
+        <div class="price-row">
+          <span>Garden Mowing</span>
+          <span>From R200</span>
+        </div>
+
+        <div class="price-row">
+          <span>Paving</span>
+          <span>From R250/m²</span>
+        </div>
+
+        <div class="price-row">
+          <span>Flooring / Outdoor Areas</span>
+          <span>Quote Required</span>
+        </div>
+
+        <div class="price-row">
+          <span>Lawn Installation</span>
+          <span>Quote Required</span>
+        </div>
+
+        <div class="price-row">
+          <span>Garden Makeover</span>
+          <span>Free Quote</span>
+        </div>
+
+        <div class="price-row">
+          <span>Complete Landscaping</span>
+          <span>Free Quote</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div>
+          <small style="color:#176b35;font-weight:900;">
+            ABOUT LEE LANDSCAPING
+          </small>
+
+          <h2>
+            Your outdoor space deserves to look its best.
+          </h2>
+
+          <p>
+            Lee Landscaping provides practical landscaping and garden
+            services for homeowners, businesses and other properties.
+          </p>
+
+          <p>
+            Whether you need regular garden maintenance, new paving, lawn
+            installation or a complete garden makeover, we can discuss your
+            requirements and provide a quote.
+          </p>
+
+          <a href="#booking" class="btn btn-gold">
+            Request a Quote
+          </a>
+        </div>
+
+        <div class="about-box">
+          <h3>Our Approach</h3>
+
+          <ul>
+            <li>✓ Understand your requirements</li>
+            <li>✓ Assess the property</li>
+            <li>✓ Recommend practical solutions</li>
+            <li>✓ Provide a clear quotation</li>
+            <li>✓ Complete the agreed work</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>Our Work</small>
+        <h2>Landscaping Projects</h2>
+        <p>
+          Add your real project photographs here as your portfolio grows.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card">
+          Garden Makeover
+        </div>
+
+        <div class="gallery-card">
+          Lawn Installation
+        </div>
+
+        <div class="gallery-card">
+          Paving Project
+        </div>
+
+        <div class="gallery-card">
+          Garden Maintenance
+        </div>
+
+        <div class="gallery-card">
+          Planting & Garden Beds
+        </div>
+
+        <div class="gallery-card">
+          Outdoor Transformation
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>Get Started</small>
+        <h2>Request a Landscaping Quote</h2>
+        <p>
+          Tell us what you need and we'll send your request through WhatsApp.
+        </p>
+      </div>
+
+      <div class="booking-box">
+
+        <form id="quoteForm">
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label>Your Name</label>
+              <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                id="customerPhone"
+                placeholder="e.g. 068 123 4567"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label>Property Type</label>
+              <select id="propertyType" required>
+                <option value="">Select property</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Office</option>
+                <option>Business</option>
+                <option>Complex</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Service Needed</label>
+              <select id="service" required>
+                <option value="">Select service</option>
+                <option>Garden Makeover</option>
+                <option>Garden Maintenance</option>
+                <option>Garden Mowing</option>
+                <option>Lawn Installation</option>
+                <option>Paving</option>
+                <option>Tree / Hedge Trimming</option>
+                <option>Planting</option>
+                <option>Irrigation</option>
+                <option>Garden Clean-Up</option>
+                <option>Complete Landscaping</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Preferred Date</label>
+              <input type="date" id="date">
+            </div>
+
+            <div class="field">
+              <label>Preferred Time</label>
+              <input type="time" id="time">
+            </div>
+
+            <div class="field full">
+              <label>Property Address / Area</label>
+              <input
+                type="text"
+                id="address"
+                placeholder="Enter your address or area"
+                required
+              >
+            </div>
+
+            <div class="field full">
+              <label>Tell Us About The Job</label>
+              <textarea
+                id="notes"
+                placeholder="Example: 80m² garden, paving required in the centre, remove flowers, plant grass, etc."
+              ></textarea>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn submit-btn">
+            🌿 Request Quote on WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="payment">
+    <div class="container">
+
+      <div class="payment-box">
+
+        <h2>Secure Payment</h2>
+
+        <p>
+          Once your quotation has been confirmed, you can use our Yoco payment
+          page for payment arrangements.
+        </p>
+
+        <a
+          id="yocoButton"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-gold"
+        >
+          💳 Pay with Yoco
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="section-heading">
+        <small style="color:#e5b64d;">Contact Us</small>
+        <h2 style="color:white;">Let's Improve Your Garden</h2>
+        <p style="color:#c5d1c7;">
+          Contact Lee Landscaping for a quote or landscaping enquiry.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <strong>📱 WhatsApp / Phone</strong>
+          <a id="phoneLink" href="#">
+            068 858 5355
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <strong>💬 WhatsApp Booking</strong>
+          <a id="contactWhatsApp" href="#" target="_blank">
+            Chat with Lee Landscaping
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <strong>💳 Payments</strong>
+          <a id="contactYoco" href="#" target="_blank">
+            Pay securely with Yoco
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Lee Landscaping</strong>
+    <br>
+    Professional Landscaping & Garden Services
+    <br><br>
+    © <span id="year"></span> Lee Landscaping. All rights reserved.
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    id="floatingWhatsApp"
+    class="whatsapp"
+    href="#"
+    target="_blank"
+    aria-label="WhatsApp"
+  >
+    💬
+  </a>
+
+  <script>
+
+    /* MENU */
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("show");
+    }
+
+    function closeMenu() {
+      document.getElementById("mainNav").classList.remove("show");
+    }
+
+    /* CONTACT LINKS */
+    document.getElementById("heroWhatsApp").href =
+      WHATSAPP_DIRECT;
+
+    document.getElementById("floatingWhatsApp").href =
+      WHATSAPP_DIRECT;
+
+    document.getElementById("contactWhatsApp").href =
+      WHATSAPP_LINK;
+
+    document.getElementById("yocoButton").href =
+      YOCO_LINK;
+
+    document.getElementById("contactYoco").href =
+      YOCO_LINK;
+
+    document.getElementById("phoneLink").href =
+      "tel:+27688585355";
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* QUOTE FORM */
+    document.getElementById("quoteForm").addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("customerName").value.trim();
+
+      const phone =
+        document.getElementById("customerPhone").value.trim();
+
+      const property =
+        document.getElementById("propertyType").value;
+
+      const service =
+        document.getElementById("service").value;
+
+      const date =
+        document.getElementById("date").value || "Not specified";
+
+      const time =
+        document.getElementById("time").value || "Not specified";
+
+      const address =
+        document.getElementById("address").value.trim();
+
+      const notes =
+        document.getElementById("notes").value.trim() ||
+        "No additional details provided.";
+
+      const message =
+`🌿 LEE LANDSCAPING — QUOTE REQUEST
+
+👤 Customer: ${name}
+📱 Phone: ${phone}
+
+🏡 Property: ${property}
+🌿 Service: ${service}
+
+📅 Preferred Date: ${date}
+⏰ Preferred Time: ${time}
+
+📍 Address / Area:
+${address}
+
+📝 Job Details:
+${notes}
+
+Please provide me with a quotation.
+
+Thank you.`;
+
+      const url =
+        WHATSAPP_DIRECT +
+        "?text=" +
+        encodeURIComponent(message);
+
+      window.open(url, "_blank");
+
+    });
+
+  </script>
+
+</body>
+</html>
