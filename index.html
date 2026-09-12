@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,10 @@
   <meta name="description" content="Lee Landscaping provides professional landscaping, garden maintenance, paving, lawn installation, garden makeovers and outdoor services. Get a quote today.">
 
   <meta name="theme-color" content="#176b35">
+
+  <!-- WhatsApp / Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     * {
@@ -67,7 +70,7 @@
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
     }
 
@@ -79,6 +82,21 @@
 
     nav a:hover {
       color: #176b35;
+    }
+
+    .nav-whatsapp {
+      background: #25D366;
+      color: white !important;
+      padding: 9px 13px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-whatsapp:hover {
+      color: white !important;
+      background: #1ebe5d;
     }
 
     .menu-btn {
@@ -146,7 +164,10 @@
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 14px 22px;
       border-radius: 9px;
       font-weight: 800;
@@ -164,9 +185,23 @@
       color: #176b35;
     }
 
+    .btn-green:hover {
+      background: #f1f7f2;
+    }
+
     .btn-gold {
       background: #d9a936;
       color: #18251c;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
+      color: white;
     }
 
     /* GENERAL */
@@ -423,6 +458,10 @@
       font-size: 16px;
     }
 
+    .submit-btn:hover {
+      background: #0f5228;
+    }
+
     /* GALLERY */
     .gallery {
       background: #eef5ef;
@@ -501,6 +540,10 @@
       color: #e5b64d;
     }
 
+    .contact-card strong i {
+      margin-right: 6px;
+    }
+
     .contact-card a {
       color: white;
       word-break: break-word;
@@ -540,25 +583,38 @@
       color: white;
     }
 
-    /* WHATSAPP */
+    footer a {
+      color: #25D366;
+      font-weight: 700;
+    }
+
+    /* FLOATING WHATSAPP */
     .whatsapp {
       position: fixed;
       right: 18px;
       bottom: 18px;
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: #25D366;
       color: white;
-      font-size: 28px;
+      font-size: 31px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.25);
       z-index: 2000;
+      transition: 0.2s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+      background: #1ebe5d;
+      color: white;
     }
 
     /* MOBILE */
     @media (max-width: 850px) {
+
       nav {
         display: none;
         position: absolute;
@@ -596,9 +652,15 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
+      .nav-whatsapp {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     @media (max-width: 560px) {
+
       .hero {
         min-height: 570px;
       }
@@ -637,6 +699,10 @@
       .about h2 {
         font-size: 34px;
       }
+
+      .buttons .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -646,15 +712,18 @@
   <!-- BUSINESS SETTINGS -->
   <script>
     const BUSINESS_NAME = "Lee Landscaping";
-    const WHATSAPP_LINK = "https://wa.me/message/27688585355";
-    const WHATSAPP_NUMBER = "068 858 5355";
-    const YOCO_LINK = "https://pay.yoco.com/lee-mobile-servises-and-constraction";
 
-    /*
-      Direct WhatsApp number used for pre-filled booking messages.
-      This is based on 068 858 5355.
-    */
-    const WHATSAPP_DIRECT = "https://wa.me/27688585355";
+    /* CORRECT WHATSAPP NUMBER */
+    const WHATSAPP_NUMBER = "068 868 5355";
+    const WHATSAPP_DIRECT = "https://wa.me/27688685355";
+
+    /* WhatsApp message link */
+    const WHATSAPP_LINK =
+      "https://wa.me/27688685355";
+
+    /* Yoco */
+    const YOCO_LINK =
+      "https://pay.yoco.com/lee-mobile-servises-and-constraction";
   </script>
 
   <!-- HEADER -->
@@ -665,15 +734,39 @@
         Lee <span>Landscaping</span>
       </a>
 
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
 
       <nav id="mainNav">
+
         <a href="#home" onclick="closeMenu()">Home</a>
+
         <a href="#services" onclick="closeMenu()">Services</a>
+
         <a href="#prices" onclick="closeMenu()">Prices</a>
+
         <a href="#gallery" onclick="closeMenu()">Projects</a>
+
         <a href="#booking" onclick="closeMenu()">Get Quote</a>
+
         <a href="#contact" onclick="closeMenu()">Contact</a>
+
+        <a
+          class="nav-whatsapp"
+          href="https://wa.me/27688685355"
+          target="_blank"
+          rel="noopener"
+          onclick="closeMenu()"
+        >
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </a>
+
       </nav>
 
     </div>
@@ -681,6 +774,7 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+
     <div class="hero-inner">
 
       <div class="hero-tag">
@@ -698,13 +792,22 @@
       </p>
 
       <div class="buttons">
+
         <a href="#booking" class="btn btn-gold">
+          <i class="fas fa-file-invoice"></i>
           Get a Free Quote
         </a>
 
-        <a id="heroWhatsApp" href="#" class="btn btn-green">
+        <a
+          href="https://wa.me/27688685355"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp"
+        >
+          <i class="fab fa-whatsapp"></i>
           WhatsApp Us
         </a>
+
       </div>
 
     </div>
@@ -712,15 +815,20 @@
 
   <!-- SERVICES -->
   <section class="services" id="services">
+
     <div class="container">
 
       <div class="section-heading">
+
         <small>What We Do</small>
+
         <h2>Our Landscaping Services</h2>
+
         <p>
           From small garden improvements to complete outdoor makeovers,
           we help turn your space into something you can enjoy.
         </p>
+
       </div>
 
       <div class="service-grid">
@@ -818,14 +926,19 @@
 
   <!-- WHY US -->
   <section class="why">
+
     <div class="container">
 
       <div class="section-heading">
+
         <small>Why Choose Us</small>
+
         <h2>Simple. Professional. Reliable.</h2>
+
         <p>
           We focus on practical landscaping solutions and quality service.
         </p>
+
       </div>
 
       <div class="why-grid">
@@ -860,15 +973,20 @@
 
   <!-- PRICES -->
   <section class="prices" id="prices">
+
     <div class="container">
 
       <div class="section-heading">
+
         <small>Starting Prices</small>
+
         <h2>Landscaping Price Guide</h2>
+
         <p>
           Final prices depend on the size, materials and requirements of your
           project.
         </p>
+
       </div>
 
       <div class="price-list">
@@ -920,11 +1038,13 @@
 
   <!-- ABOUT -->
   <section class="about" id="about">
+
     <div class="container">
 
       <div class="about-grid">
 
         <div>
+
           <small style="color:#176b35;font-weight:900;">
             ABOUT LEE LANDSCAPING
           </small>
@@ -945,11 +1065,14 @@
           </p>
 
           <a href="#booking" class="btn btn-gold">
+            <i class="fas fa-file-invoice"></i>
             Request a Quote
           </a>
+
         </div>
 
         <div class="about-box">
+
           <h3>Our Approach</h3>
 
           <ul>
@@ -959,6 +1082,7 @@
             <li>✓ Provide a clear quotation</li>
             <li>✓ Complete the agreed work</li>
           </ul>
+
         </div>
 
       </div>
@@ -968,14 +1092,19 @@
 
   <!-- PROJECTS -->
   <section class="gallery" id="gallery">
+
     <div class="container">
 
       <div class="section-heading">
+
         <small>Our Work</small>
+
         <h2>Landscaping Projects</h2>
+
         <p>
           Add your real project photographs here as your portfolio grows.
         </p>
+
       </div>
 
       <div class="gallery-grid">
@@ -1011,14 +1140,19 @@
 
   <!-- BOOKING -->
   <section class="booking" id="booking">
+
     <div class="container">
 
       <div class="section-heading">
+
         <small>Get Started</small>
+
         <h2>Request a Landscaping Quote</h2>
+
         <p>
           Tell us what you need and we'll send your request through WhatsApp.
         </p>
+
       </div>
 
       <div class="booking-box">
@@ -1028,28 +1162,37 @@
           <div class="form-grid">
 
             <div class="field">
+
               <label>Your Name</label>
+
               <input
                 type="text"
                 id="customerName"
                 placeholder="Enter your name"
                 required
               >
+
             </div>
 
             <div class="field">
+
               <label>Phone Number</label>
+
               <input
                 type="tel"
                 id="customerPhone"
                 placeholder="e.g. 068 123 4567"
                 required
               >
+
             </div>
 
             <div class="field">
+
               <label>Property Type</label>
+
               <select id="propertyType" required>
+
                 <option value="">Select property</option>
                 <option>House</option>
                 <option>Apartment</option>
@@ -1057,12 +1200,17 @@
                 <option>Business</option>
                 <option>Complex</option>
                 <option>Other</option>
+
               </select>
+
             </div>
 
             <div class="field">
+
               <label>Service Needed</label>
+
               <select id="service" required>
+
                 <option value="">Select service</option>
                 <option>Garden Makeover</option>
                 <option>Garden Maintenance</option>
@@ -1075,41 +1223,65 @@
                 <option>Garden Clean-Up</option>
                 <option>Complete Landscaping</option>
                 <option>Other</option>
+
               </select>
+
             </div>
 
             <div class="field">
+
               <label>Preferred Date</label>
-              <input type="date" id="date">
+
+              <input
+                type="date"
+                id="date"
+              >
+
             </div>
 
             <div class="field">
+
               <label>Preferred Time</label>
-              <input type="time" id="time">
+
+              <input
+                type="time"
+                id="time"
+              >
+
             </div>
 
             <div class="field full">
+
               <label>Property Address / Area</label>
+
               <input
                 type="text"
                 id="address"
                 placeholder="Enter your address or area"
                 required
               >
+
             </div>
 
             <div class="field full">
+
               <label>Tell Us About The Job</label>
+
               <textarea
                 id="notes"
                 placeholder="Example: 80m² garden, paving required in the centre, remove flowers, plant grass, etc."
               ></textarea>
+
             </div>
 
           </div>
 
           <button type="submit" class="btn submit-btn">
-            🌿 Request Quote on WhatsApp
+
+            <i class="fab fa-whatsapp"></i>
+
+            Request Quote on WhatsApp
+
           </button>
 
         </form>
@@ -1121,6 +1293,7 @@
 
   <!-- PAYMENT -->
   <section class="payment">
+
     <div class="container">
 
       <div class="payment-box">
@@ -1139,7 +1312,8 @@
           rel="noopener"
           class="btn btn-gold"
         >
-          💳 Pay with Yoco
+          <i class="fas fa-credit-card"></i>
+          Pay with Yoco
         </a>
 
       </div>
@@ -1149,37 +1323,74 @@
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
+
     <div class="container">
 
       <div class="section-heading">
-        <small style="color:#e5b64d;">Contact Us</small>
-        <h2 style="color:white;">Let's Improve Your Garden</h2>
+
+        <small style="color:#e5b64d;">
+          Contact Us
+        </small>
+
+        <h2 style="color:white;">
+          Let's Improve Your Garden
+        </h2>
+
         <p style="color:#c5d1c7;">
           Contact Lee Landscaping for a quote or landscaping enquiry.
         </p>
+
       </div>
 
       <div class="contact-grid">
 
         <div class="contact-card">
-          <strong>📱 WhatsApp / Phone</strong>
-          <a id="phoneLink" href="#">
-            068 858 5355
+
+          <strong>
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp / Phone
+          </strong>
+
+          <a id="phoneLink" href="tel:+27688685355">
+            068 868 5355
           </a>
+
         </div>
 
         <div class="contact-card">
-          <strong>💬 WhatsApp Booking</strong>
-          <a id="contactWhatsApp" href="#" target="_blank">
+
+          <strong>
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp Booking
+          </strong>
+
+          <a
+            id="contactWhatsApp"
+            href="https://wa.me/27688685355"
+            target="_blank"
+            rel="noopener"
+          >
             Chat with Lee Landscaping
           </a>
+
         </div>
 
         <div class="contact-card">
-          <strong>💳 Payments</strong>
-          <a id="contactYoco" href="#" target="_blank">
+
+          <strong>
+            <i class="fas fa-credit-card"></i>
+            Payments
+          </strong>
+
+          <a
+            id="contactYoco"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
             Pay securely with Yoco
           </a>
+
         </div>
 
       </div>
@@ -1189,38 +1400,71 @@
 
   <!-- FOOTER -->
   <footer>
+
     <strong>Lee Landscaping</strong>
+
     <br>
+
     Professional Landscaping & Garden Services
+
     <br><br>
-    © <span id="year"></span> Lee Landscaping. All rights reserved.
+
+    <a
+      href="https://wa.me/27688685355"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fab fa-whatsapp"></i>
+      WhatsApp: 068 868 5355
+    </a>
+
+    <br><br>
+
+    © <span id="year"></span> Lee Landscaping.
+    All rights reserved.
+
   </footer>
 
   <!-- FLOATING WHATSAPP -->
   <a
     id="floatingWhatsApp"
     class="whatsapp"
-    href="#"
+    href="https://wa.me/27688685355"
     target="_blank"
-    aria-label="WhatsApp"
+    rel="noopener"
+    aria-label="Chat with Lee Landscaping on WhatsApp"
   >
-    💬
+    <i class="fab fa-whatsapp"></i>
   </a>
 
   <script>
 
     /* MENU */
+
     function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("show");
+
+      document
+        .getElementById("mainNav")
+        .classList
+        .toggle("show");
+
     }
 
     function closeMenu() {
-      document.getElementById("mainNav").classList.remove("show");
+
+      document
+        .getElementById("mainNav")
+        .classList
+        .remove("show");
+
     }
 
+
     /* CONTACT LINKS */
-    document.getElementById("heroWhatsApp").href =
-      WHATSAPP_DIRECT;
+
+    document.getElementById("heroWhatsApp") &&
+    (document.getElementById("heroWhatsApp").href =
+      WHATSAPP_DIRECT);
 
     document.getElementById("floatingWhatsApp").href =
       WHATSAPP_DIRECT;
@@ -1235,43 +1479,69 @@
       YOCO_LINK;
 
     document.getElementById("phoneLink").href =
-      "tel:+27688585355";
+      "tel:+27688685355";
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
 
     /* QUOTE FORM */
-    document.getElementById("quoteForm").addEventListener("submit", function(event) {
 
-      event.preventDefault();
+    document
+      .getElementById("quoteForm")
+      .addEventListener("submit", function(event) {
 
-      const name =
-        document.getElementById("customerName").value.trim();
+        event.preventDefault();
 
-      const phone =
-        document.getElementById("customerPhone").value.trim();
+        const name =
+          document
+            .getElementById("customerName")
+            .value
+            .trim();
 
-      const property =
-        document.getElementById("propertyType").value;
+        const phone =
+          document
+            .getElementById("customerPhone")
+            .value
+            .trim();
 
-      const service =
-        document.getElementById("service").value;
+        const property =
+          document
+            .getElementById("propertyType")
+            .value;
 
-      const date =
-        document.getElementById("date").value || "Not specified";
+        const service =
+          document
+            .getElementById("service")
+            .value;
 
-      const time =
-        document.getElementById("time").value || "Not specified";
+        const date =
+          document
+            .getElementById("date")
+            .value ||
+          "Not specified";
 
-      const address =
-        document.getElementById("address").value.trim();
+        const time =
+          document
+            .getElementById("time")
+            .value ||
+          "Not specified";
 
-      const notes =
-        document.getElementById("notes").value.trim() ||
-        "No additional details provided.";
+        const address =
+          document
+            .getElementById("address")
+            .value
+            .trim();
 
-      const message =
+        const notes =
+          document
+            .getElementById("notes")
+            .value
+            .trim() ||
+          "No additional details provided.";
+
+
+        const message =
 `🌿 LEE LANDSCAPING — QUOTE REQUEST
 
 👤 Customer: ${name}
@@ -1293,14 +1563,16 @@ Please provide me with a quotation.
 
 Thank you.`;
 
-      const url =
-        WHATSAPP_DIRECT +
-        "?text=" +
-        encodeURIComponent(message);
 
-      window.open(url, "_blank");
+        const url =
+          WHATSAPP_DIRECT +
+          "?text=" +
+          encodeURIComponent(message);
 
-    });
+
+        window.open(url, "_blank");
+
+      });
 
   </script>
 
